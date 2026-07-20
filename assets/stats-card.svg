@@ -1,73 +1,80 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="495" height="500"
-     viewBox="0 0 495 500" role="img"
-     aria-label="GitHub stats card — pending first workflow run">
-
-  <!-- Background -->
-  <rect width="495" height="500" fill="#0d0d0d" rx="8"/>
-
-  <!-- Title bar -->
-  <rect width="495" height="30" fill="#1a1a1a" rx="8"/>
-  <rect y="24" width="495" height="6" fill="#1a1a1a"/>
-  <circle cx="16" cy="15" r="5" fill="#ff5f56"/>
-  <circle cx="34" cy="15" r="5" fill="#ffbd2e"/>
-  <circle cx="52" cy="15" r="5" fill="#27c93f"/>
-  <text x="247" y="19" font-family="'Courier New', Courier, monospace"
-        font-size="10" fill="#888888" text-anchor="middle">
-    soumya@github — stats
-  </text>
-
-  <!-- Section header -->
-  <text x="16" y="62" font-family="'Courier New', Courier, monospace"
-        font-size="12" font-weight="bold" fill="#39FF14">&#x25C8;  GitHub Statistics</text>
-  <line x1="16" y1="70" x2="479" y2="70" stroke="#1f1f1f" stroke-width="1"/>
-
-  <!-- Placeholder stat boxes -->
-  <text x="73"  y="112" font-family="'Courier New', Courier, monospace"
-        font-size="26" font-weight="bold" fill="#39FF14" text-anchor="middle">–</text>
-  <text x="73"  y="132" font-family="'Courier New', Courier, monospace"
-        font-size="9"  fill="#2ecc40" text-anchor="middle">Public Repos</text>
-
-  <text x="191" y="112" font-family="'Courier New', Courier, monospace"
-        font-size="26" font-weight="bold" fill="#39FF14" text-anchor="middle">–</text>
-  <text x="191" y="132" font-family="'Courier New', Courier, monospace"
-        font-size="9"  fill="#2ecc40" text-anchor="middle">Followers</text>
-
-  <text x="309" y="112" font-family="'Courier New', Courier, monospace"
-        font-size="26" font-weight="bold" fill="#39FF14" text-anchor="middle">–</text>
-  <text x="309" y="132" font-family="'Courier New', Courier, monospace"
-        font-size="9"  fill="#2ecc40" text-anchor="middle">Following</text>
-
-  <text x="427" y="112" font-family="'Courier New', Courier, monospace"
-        font-size="26" font-weight="bold" fill="#39FF14" text-anchor="middle">–</text>
-  <text x="427" y="132" font-family="'Courier New', Courier, monospace"
-        font-size="9"  fill="#2ecc40" text-anchor="middle">Total Stars</text>
-
-  <line x1="16" y1="144" x2="479" y2="144" stroke="#1f1f1f" stroke-width="1"/>
-
-  <!-- Loading notice -->
-  <rect x="40" y="175" width="415" height="80" fill="#111" rx="4"/>
-  <text x="247" y="204" font-family="'Courier New', Courier, monospace"
-        font-size="12" fill="#39FF14" text-anchor="middle">&#x27F3; Stats loading…</text>
-  <text x="247" y="222" font-family="'Courier New', Courier, monospace"
-        font-size="9" fill="#2ecc40" text-anchor="middle">
-    Trigger the workflow to fetch live data.
-  </text>
-  <text x="247" y="238" font-family="'Courier New', Courier, monospace"
-        font-size="9" fill="#2ecc40" text-anchor="middle">
-    Language bars, stars, forks &amp; more will appear here.
-  </text>
-
-  <!-- Prompt decoration -->
-  <text x="16" y="450" font-family="'Courier New', Courier, monospace"
-        font-size="9" fill="#2ecc40">SOUMYA0023@github:~$ echo &quot;Keep shipping.&quot;</text>
-  <text x="16" y="464" font-family="'Courier New', Courier, monospace"
-        font-size="9" fill="#39FF14">Keep shipping.</text>
-  <text x="16" y="478" font-family="'Courier New', Courier, monospace"
-        font-size="9" fill="#2ecc40">SOUMYA0023@github:~$ &#x2588;</text>
-
-  <!-- Footer -->
-  <text x="247" y="494" font-family="'Courier New', Courier, monospace"
-        font-size="8" fill="#2ecc40" text-anchor="middle">
-    Auto-updated every 6 hours via GitHub Actions
-  </text>
+<svg xmlns="http://www.w3.org/2000/svg" width="495" height="500" viewBox="0 0 495 500" role="img" aria-label="GitHub stats for SOUMYA0023">
+<defs><style>
+text         { font-family: 'Courier New', Courier, monospace; }
+.wintitle    { font-size: 10px; fill: #888888; }
+.sec-head    { font-size: 12px; font-weight: bold; fill: #39FF14; }
+.stat-n      { font-size: 26px; font-weight: bold; fill: #39FF14; }
+.stat-l      { font-size:  9px; fill: #2ecc40; }
+.lang-name   { font-size:  9px; font-weight: bold; fill: #57d855; }
+.lang-pct    { font-size:  9px; fill: #2ecc40; }
+.icon-n      { font-size: 14px; font-weight: bold; fill: #39FF14; }
+.icon-l      { font-size:  9px; fill: #2ecc40; }
+.prompt-dim  { font-size:  9px; fill: #2ecc40; }
+.caption     { font-size:  8px; fill: #2ecc40; }
+</style></defs>
+<rect width="495" height="500" fill="#0d0d0d" rx="8"/>
+<rect width="495" height="30" fill="#1a1a1a" rx="8"/>
+<rect y="24" width="495" height="6" fill="#1a1a1a"/>
+<circle cx="16" cy="15" r="5" fill="#ff5f56"/>
+<circle cx="34" cy="15" r="5" fill="#ffbd2e"/>
+<circle cx="52" cy="15" r="5" fill="#27c93f"/>
+<text x="247" y="19" class="wintitle" text-anchor="middle">soumya@github — stats</text>
+<text x="16" y="46.0" class="sec-head">◈  GitHub Statistics</text>
+<line x1="16" y1="54.0" x2="479" y2="54.0" stroke="#1f1f1f" stroke-width="1"/>
+<text x="73" y="84.0" class="stat-n" text-anchor="middle">84</text>
+<text x="73" y="104.0" class="stat-l" text-anchor="middle">Public Repos</text>
+<text x="188" y="84.0" class="stat-n" text-anchor="middle">6</text>
+<text x="188" y="104.0" class="stat-l" text-anchor="middle">Followers</text>
+<text x="303" y="84.0" class="stat-n" text-anchor="middle">5</text>
+<text x="303" y="104.0" class="stat-l" text-anchor="middle">Following</text>
+<text x="418" y="84.0" class="stat-n" text-anchor="middle">279</text>
+<text x="418" y="104.0" class="stat-l" text-anchor="middle">Total Stars</text>
+<line x1="16" y1="128.0" x2="479" y2="128.0" stroke="#1f1f1f" stroke-width="1"/>
+<text x="16" y="148.0" class="sec-head">▸ Top Languages by Code Volume</text>
+<rect x="16" y="158.0" width="9" height="9" fill="#2b7489" rx="2"/>
+<text x="29" y="166.0" class="lang-name">TypeScript <tspan class="lang-pct">46.8%</tspan></text>
+<rect x="131" y="158.0" width="9" height="9" fill="#3572A5" rx="2"/>
+<text x="144" y="166.0" class="lang-name">Python <tspan class="lang-pct">29.8%</tspan></text>
+<rect x="246" y="158.0" width="9" height="9" fill="#f1e05a" rx="2"/>
+<text x="259" y="166.0" class="lang-name">JavaScript <tspan class="lang-pct">12.5%</tspan></text>
+<rect x="361" y="158.0" width="9" height="9" fill="#e34c26" rx="2"/>
+<text x="374" y="166.0" class="lang-name">HTML <tspan class="lang-pct">10.9%</tspan></text>
+<rect x="16" y="178.0" width="216" height="12" fill="#2b7489"/>
+<rect x="232" y="178.0" width="137" height="12" fill="#3572A5"/>
+<rect x="369" y="178.0" width="57" height="12" fill="#f1e05a"/>
+<rect x="426" y="178.0" width="50" height="12" fill="#e34c26"/>
+<text x="16" y="212.0" class="lang-name">TypeScript</text>
+<rect x="111" y="204.0" width="322" height="9" fill="#1a1a1a" rx="4"/>
+<rect x="111" y="204.0" width="150" height="9" fill="#2b7489" rx="4"/>
+<text x="439" y="212.0" class="lang-pct">46.8%</text>
+<text x="16" y="230.0" class="lang-name">Python</text>
+<rect x="111" y="222.0" width="322" height="9" fill="#1a1a1a" rx="4"/>
+<rect x="111" y="222.0" width="95" height="9" fill="#3572A5" rx="4"/>
+<text x="439" y="230.0" class="lang-pct">29.8%</text>
+<text x="16" y="248.0" class="lang-name">JavaScript</text>
+<rect x="111" y="240.0" width="322" height="9" fill="#1a1a1a" rx="4"/>
+<rect x="111" y="240.0" width="40" height="9" fill="#f1e05a" rx="4"/>
+<text x="439" y="248.0" class="lang-pct">12.5%</text>
+<text x="16" y="266.0" class="lang-name">HTML</text>
+<rect x="111" y="258.0" width="322" height="9" fill="#1a1a1a" rx="4"/>
+<rect x="111" y="258.0" width="35" height="9" fill="#e34c26" rx="4"/>
+<text x="439" y="266.0" class="lang-pct">10.9%</text>
+<line x1="16" y1="282.0" x2="479" y2="282.0" stroke="#1f1f1f" stroke-width="1"/>
+<g transform="translate(63.0,300.0) scale(0.8333)"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.62L12 2 9.19 8.62 2 9.24l5.46 4.73L5.82 21z" fill="#2ecc40"/></g>
+<text x="73" y="334.0" class="icon-n" text-anchor="middle">279</text>
+<text x="73" y="347.0" class="icon-l" text-anchor="middle">Stars</text>
+<g transform="translate(178.0,300.0) scale(0.8333)"><path d="M6 2a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm0 6a4 4 0 0 0-1 7.87V18a3 3 0 0 0 6 0v-1.13A4 4 0 0 0 10 9.17V8h-4zm6-6a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm0 9a2 2 0 1 0 0 4 2 2 0 0 0 0-4z" fill="#2ecc40"/></g>
+<text x="188" y="334.0" class="icon-n" text-anchor="middle">3</text>
+<text x="188" y="347.0" class="icon-l" text-anchor="middle">Forks</text>
+<g transform="translate(293.0,300.0) scale(0.8333)"><path d="M2 3.5A1.5 1.5 0 0 1 3.5 2h9A1.5 1.5 0 0 1 14 3.5V5h1V3.5A2.5 2.5 0 0 0 12.5 1h-9A2.5 2.5 0 0 0 1 3.5v9A2.5 2.5 0 0 0 3.5 15H5v-1H3.5A1.5 1.5 0 0 1 2 12.5v-9zM8 8a1 1 0 0 1 1-1h6a1 1 0 0 1 0 2H9a1 1 0 0 1-1-1zm1 3a1 1 0 0 0 0 2h6a1 1 0 0 0 0-2H9zm-1-7a1 1 0 0 1 1-1h6a1 1 0 0 1 0 2H9a1 1 0 0 1-1-1z" fill="#2ecc40"/></g>
+<text x="303" y="334.0" class="icon-n" text-anchor="middle">84</text>
+<text x="303" y="347.0" class="icon-l" text-anchor="middle">Public Repos</text>
+<g transform="translate(408.0,300.0) scale(0.8333)"><path d="M10 10a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm-6 8a6 6 0 0 1 12 0H4z" fill="#2ecc40"/></g>
+<text x="418" y="334.0" class="icon-n" text-anchor="middle">6</text>
+<text x="418" y="347.0" class="icon-l" text-anchor="middle">Followers</text>
+<line x1="16" y1="362.0" x2="479" y2="362.0" stroke="#1f1f1f" stroke-width="1"/>
+<text x="16" y="378.0" class="prompt-dim">SOUMYA0023@github:~$ <tspan fill="#39FF14">echo &quot;Keep shipping.&quot;</tspan></text>
+<text x="16" y="392.0" class="prompt-dim" fill="#39FF14">Keep shipping.</text>
+<text x="16" y="406.0" class="prompt-dim">SOUMYA0023@github:~$ <tspan fill="#39FF14">█</tspan></text>
+<text x="247" y="494" class="caption" text-anchor="middle">Auto-updated every 6 hours via GitHub Actions</text>
 </svg>

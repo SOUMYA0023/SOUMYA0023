@@ -1,78 +1,110 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="495" height="500"
-     viewBox="0 0 495 500" role="img"
-     aria-label="Terminal profile card — pending first workflow run">
-
-  <!-- Background -->
-  <rect width="495" height="500" fill="#0d0d0d" rx="8"/>
-
-  <!-- Title bar -->
-  <rect width="495" height="30" fill="#1a1a1a" rx="8"/>
-  <rect y="24" width="495" height="6" fill="#1a1a1a"/>
-  <circle cx="16" cy="15" r="5" fill="#ff5f56"/>
-  <circle cx="34" cy="15" r="5" fill="#ffbd2e"/>
-  <circle cx="52" cy="15" r="5" fill="#27c93f"/>
-  <text x="247" y="19" font-family="'Courier New', Courier, monospace"
-        font-size="10" fill="#888888" text-anchor="middle">
-    soumya@github — neofetch
-  </text>
-
-  <!-- Separator -->
-  <line x1="190" y1="30" x2="190" y2="500" stroke="#1f1f1f" stroke-width="1"/>
-
-  <!-- Left: pending placeholder -->
-  <text x="14" y="58" font-family="'Courier New', Courier, monospace"
-        font-size="8" fill="#2ecc40">$ neofetch --user SOUMYA0023</text>
-  <text x="14" y="260" font-family="'Courier New', Courier, monospace"
-        font-size="9" fill="#39FF14" text-anchor="middle" x="97">&#x23F3; Loading…</text>
-
-  <!-- Right: username header -->
-  <text x="205" y="44" font-family="'Courier New', Courier, monospace"
-        font-size="13" font-weight="bold" fill="#39FF14">SOUMYA0023@github</text>
-  <text x="205" y="57" font-family="'Courier New', Courier, monospace"
-        font-size="9" fill="#2ecc40">&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;</text>
-
-  <text x="205" y="85" font-family="'Courier New', Courier, monospace"
-        font-size="9" font-weight="bold" fill="#57d855">Name:</text>
-  <text x="277" y="85" font-family="'Courier New', Courier, monospace"
-        font-size="9" fill="#39FF14">Soumya Kar</text>
-
-  <text x="205" y="99" font-family="'Courier New', Courier, monospace"
-        font-size="9" font-weight="bold" fill="#57d855">Role:</text>
-  <text x="277" y="99" font-family="'Courier New', Courier, monospace"
-        font-size="9" fill="#39FF14">Full-Stack + AI Builder</text>
-
-  <text x="205" y="113" font-family="'Courier New', Courier, monospace"
-        font-size="9" font-weight="bold" fill="#57d855">OS:</text>
-  <text x="277" y="113" font-family="'Courier New', Courier, monospace"
-        font-size="9" fill="#39FF14">CS Undergraduate</text>
-
-  <text x="205" y="127" font-family="'Courier New', Courier, monospace"
-        font-size="9" font-weight="bold" fill="#57d855">Position:</text>
-  <text x="277" y="127" font-family="'Courier New', Courier, monospace"
-        font-size="9" fill="#39FF14">President, Intellects</text>
-  <text x="277" y="141" font-family="'Courier New', Courier, monospace"
-        font-size="9" fill="#39FF14">Technical Club</text>
-
-  <text x="205" y="155" font-family="'Courier New', Courier, monospace"
-        font-size="9" font-weight="bold" fill="#57d855">CGPA:</text>
-  <text x="277" y="155" font-family="'Courier New', Courier, monospace"
-        font-size="9" fill="#39FF14">8.91</text>
-
-  <text x="205" y="185" font-family="'Courier New', Courier, monospace"
-        font-size="9" fill="#2ecc40">&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;</text>
-
-  <!-- Loading notice -->
-  <rect x="197" y="200" width="286" height="60" fill="#111" rx="4"/>
-  <text x="340" y="222" font-family="'Courier New', Courier, monospace"
-        font-size="10" fill="#39FF14" text-anchor="middle">&#x27F3; Generating card…</text>
-  <text x="340" y="238" font-family="'Courier New', Courier, monospace"
-        font-size="8" fill="#2ecc40" text-anchor="middle">Trigger the workflow to populate</text>
-  <text x="340" y="250" font-family="'Courier New', Courier, monospace"
-        font-size="8" fill="#2ecc40" text-anchor="middle">with live data + ASCII avatar.</text>
-
-  <!-- Footer -->
-  <text x="247" y="494" font-family="'Courier New', Courier, monospace"
-        font-size="8" fill="#2ecc40" text-anchor="middle">
-    Auto-updated every 6 h via GitHub Actions
-  </text>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="495" height="500" viewBox="0 0 495 500" role="img" aria-label="Terminal profile card for SOUMYA0023">
+<defs><style>
+text { font-family: 'Courier New', Courier, monospace; }
+.ascii  { font-size: 7.5px; fill: #39FF14; }
+.prompt { font-size: 8px; fill: #2ecc40; }
+.uname  { font-size: 13px; font-weight: bold; fill: #39FF14; }
+.dash   { font-size: 9px;  fill: #2ecc40; }
+.lbl    { font-size: 9.0px; font-weight: bold; fill: #57d855; }
+.val    { font-size: 9.0px; fill: #39FF14; }
+.sec    { font-size: 9.0px; font-weight: bold; fill: #2ecc40; }
+.link   { font-size: 9.0px; fill: #58d0ff; }
+.wintitle { font-size: 10px; fill: #888888; }
+.caption  { font-size: 8px;  fill: #2ecc40; }
+</style></defs>
+<rect width="495" height="500" fill="#0d0d0d" rx="8"/>
+<rect width="495" height="30" fill="#1a1a1a" rx="8"/>
+<rect y="24" width="495" height="6" fill="#1a1a1a"/>
+<circle cx="16" cy="15" r="5" fill="#ff5f56"/>
+<circle cx="34" cy="15" r="5" fill="#ffbd2e"/>
+<circle cx="52" cy="15" r="5" fill="#27c93f"/>
+<text x="247" y="19" class="wintitle" text-anchor="middle">soumya@github — neofetch</text>
+<line x1="190" y1="30" x2="190" y2="500" stroke="#1f1f1f" stroke-width="1"/>
+<text x="14" y="44" class="prompt">$ neofetch --user SOUMYA0023</text>
+<text x="14" y="57.0" class="ascii"><tspan xml:space="preserve">@@@@@%@@@@@%@@@@@%%@@@@%%@@@%@@@@@@@</tspan></text>
+<text x="14" y="66.0" class="ascii"><tspan xml:space="preserve">@@@%#=###%#%%%%%###%@@%#+#@%+##@@@@@</tspan></text>
+<text x="14" y="75.0" class="ascii"><tspan xml:space="preserve">@@%*++#+*#*%%%%%%%%%@@@%%#%%+*#@%@@@</tspan></text>
+<text x="14" y="84.0" class="ascii"><tspan xml:space="preserve">@@%=++*+**#@@%%%%%%%%@@%%%%#*%%%%@@@</tspan></text>
+<text x="14" y="93.0" class="ascii"><tspan xml:space="preserve">@@%-+*#**%%@@%%%%##%%%@@%@%*#%%%*%@@</tspan></text>
+<text x="14" y="102.0" class="ascii"><tspan xml:space="preserve">@@%==+#+%@@@%%%###%%@@@@@@%**%%*-#@@</tspan></text>
+<text x="14" y="111.0" class="ascii"><tspan xml:space="preserve">@@%==**=%@@%%######*#@@@@@@+**=:-%@@</tspan></text>
+<text x="14" y="120.0" class="ascii"><tspan xml:space="preserve">@@@+-**+#@######***#%@@%@%%+--::-%@@</tspan></text>
+<text x="14" y="129.0" class="ascii"><tspan xml:space="preserve">@@@+-#*+*%**###**#%%%%@@@%%=:--::%@@</tspan></text>
+<text x="14" y="138.0" class="ascii"><tspan xml:space="preserve">@@%++*+=+%**####%%#*#%%%%%%-:--::%@@</tspan></text>
+<text x="14" y="147.0" class="ascii"><tspan xml:space="preserve">@@#-=*+==##*###%*===+####%#-:--::%@@</tspan></text>
+<text x="14" y="156.0" class="ascii"><tspan xml:space="preserve">@@%+=*===+#*###+:--=*##*#@+-:--::#@@</tspan></text>
+<text x="14" y="165.0" class="ascii"><tspan xml:space="preserve">@@%***===+#*##=::-*%@%*%@#--::-::#@@</tspan></text>
+<text x="14" y="174.0" class="ascii"><tspan xml:space="preserve">@@#=**===+##%*:::+#%#**#%=:-::-::#@@</tspan></text>
+<text x="14" y="183.0" class="ascii"><tspan xml:space="preserve">@@%=+#====*##=::-*#%%**%%-:-::--:#@@</tspan></text>
+<text x="14" y="192.0" class="ascii"><tspan xml:space="preserve">@@@=*#*+=*++#=·:=++##=+#*-:-::--:#@@</tspan></text>
+<text x="14" y="201.0" class="ascii"><tspan xml:space="preserve">@@%+*##*==+=+-::--+*+--**-:-::--:#@@</tspan></text>
+<text x="14" y="210.0" class="ascii"><tspan xml:space="preserve">@@%+**+++#**=-:::--==-:=+-:-::--:#@@</tspan></text>
+<text x="14" y="219.0" class="ascii"><tspan xml:space="preserve">@@%**==+#%#+--::::-=+::-+=:=::--:#@@</tspan></text>
+<text x="14" y="228.0" class="ascii"><tspan xml:space="preserve">@@@**+++*%%===-:---++-++*=:=-:--:#@@</tspan></text>
+<text x="14" y="237.0" class="ascii"><tspan xml:space="preserve">@@@**++#@%@+-=-:--=*=+%%#=:--:--:#@@</tspan></text>
+<text x="14" y="246.0" class="ascii"><tspan xml:space="preserve">@@@**+=+##@@*=::--=*+#%%%=:--::-:#@@</tspan></text>
+<text x="14" y="255.0" class="ascii"><tspan xml:space="preserve">@@@++#=**#@@#-:---+#%%##%=:--::-:#@@</tspan></text>
+<text x="14" y="264.0" class="ascii"><tspan xml:space="preserve">@@@+*#-=++%@%-----+##+*#*-::-::=:#@@</tspan></text>
+<text x="14" y="273.0" class="ascii"><tspan xml:space="preserve">@@#=#*-----*+=---=+*=+##**==-·:-:#@@</tspan></text>
+<text x="14" y="282.0" class="ascii"><tspan xml:space="preserve">@@#=#+----:-:-=--=+====+#@@@#=-=-#@@</tspan></text>
+<text x="14" y="291.0" class="ascii"><tspan xml:space="preserve">@@#+#=----::-======-=-=+%@@@@@%%*%@@</tspan></text>
+<text x="14" y="300.0" class="ascii"><tspan xml:space="preserve">@@#+#=---:-=#+--=++===*#@@@@@%%%%@@@</tspan></text>
+<text x="14" y="309.0" class="ascii"><tspan xml:space="preserve">@@%+#=-:-=*##=:--+####%@@@@@@%%%%@@@</tspan></text>
+<text x="14" y="318.0" class="ascii"><tspan xml:space="preserve">@@#=#=--+#*##+:--+%%%@@@@@@@@%%%%@@@</tspan></text>
+<text x="14" y="327.0" class="ascii"><tspan xml:space="preserve">@@#=*==*##*##*:--=**%@@@@@@%%%#%#@@@</tspan></text>
+<text x="14" y="336.0" class="ascii"><tspan xml:space="preserve">@@#=*+####**##=:=++*##%@%@%%##%%#@@@</tspan></text>
+<text x="14" y="345.0" class="ascii"><tspan xml:space="preserve">@@#-+#####**##*-:--++*@%%%%###%%%@@@</tspan></text>
+<text x="14" y="354.0" class="ascii"><tspan xml:space="preserve">@@#=*#%###**###*-:-=*#@%%####*%#%@@@</tspan></text>
+<text x="14" y="363.0" class="ascii"><tspan xml:space="preserve">@@#+*%%###*#*%##%#####@#%#*#**%#%@@@</tspan></text>
+<text x="14" y="372.0" class="ascii"><tspan xml:space="preserve">@@#+#%%###*#*%###%%%#%%*%#**#*%%#%@@</tspan></text>
+<text x="14" y="381.0" class="ascii"><tspan xml:space="preserve">@@%*%%%%##*#*%%##%%##@%*%#**#*%%#%@@</tspan></text>
+<text x="14" y="390.0" class="ascii"><tspan xml:space="preserve">@@%*%%%%##*###%##%%##@#*%***#*#%#@@@</tspan></text>
+<text x="14" y="399.0" class="ascii"><tspan xml:space="preserve">@@%*#%#%###*##@##%#*#@#*%#****%##@@@</tspan></text>
+<text x="14" y="408.0" class="ascii"><tspan xml:space="preserve">@@%*#%#%####%#@%#%#*%@#*%#*#**%%#%@@</tspan></text>
+<text x="14" y="417.0" class="ascii"><tspan xml:space="preserve">@@%*#%#%####%*%%###*@%**%#*#**%%*%@@</tspan></text>
+<text x="14" y="426.0" class="ascii"><tspan xml:space="preserve">@@%##%#%####%##%####@%*+%###**@%*%@@</tspan></text>
+<text x="14" y="435.0" class="ascii"><tspan xml:space="preserve">@@%#%##%%###%##%%###@%*+#*#*+*@%*%@@</tspan></text>
+<text x="14" y="444.0" class="ascii"><tspan xml:space="preserve">@@%#%##@##*+***##*+#%++=++*#+*@@*%@@</tspan></text>
+<text x="14" y="453.0" class="ascii"><tspan xml:space="preserve">@@%#%##@%#*+#*+**+=##+++*#**+*@@*%@@</tspan></text>
+<text x="14" y="462.0" class="ascii"><tspan xml:space="preserve">@@%#%##%%#*#%%*#%#*%@#**###*+*@@*%@@</tspan></text>
+<text x="14" y="471.0" class="ascii"><tspan xml:space="preserve">@@%*%%#%%#*#%%##%#*%@#*####*+*@@#%@@</tspan></text>
+<text x="205" y="44.0" class="uname">SOUMYA0023@github</text>
+<text x="205" y="57.0" class="dash">──────────────────────────────</text>
+<text x="205" y="71.0" class="lbl">Name:</text>
+<text x="277" y="71.0" class="val">Soumya Kar</text>
+<text x="205" y="85.0" class="lbl">Role:</text>
+<text x="277" y="85.0" class="val">Full-Stack + AI Builder</text>
+<text x="205" y="99.0" class="lbl">OS:</text>
+<text x="277" y="99.0" class="val">CS Undergraduate</text>
+<text x="205" y="113.0" class="lbl">Position:</text>
+<text x="277" y="113.0" class="val">President, Intellects Technical Club</text>
+<text x="205" y="127.0" class="lbl">CGPA:</text>
+<text x="277" y="127.0" class="val">8.91</text>
+<text x="205" y="141.0" class="lbl">Languages:</text>
+<text x="277" y="141.0" class="val">Python, TypeScript, JavaScript</text>
+<text x="205" y="155.0" class="lbl">Frameworks:</text>
+<text x="277" y="155.0" class="val">Next.js, React, FastAPI, LangGraph</text>
+<text x="205" y="169.0" class="lbl">Tools:</text>
+<text x="277" y="169.0" class="val">Supabase, PostgreSQL, Docker,</text>
+<text x="277" y="183.0" class="val">GitHub Actions</text>
+<text x="205" y="197.0" class="lbl">AI/ML:</text>
+<text x="277" y="197.0" class="val">PyTorch, Gemini API, RAG pipelines</text>
+<text x="205" y="211.0" class="lbl">Repos:</text>
+<text x="277" y="211.0" class="val">84</text>
+<text x="205" y="225.0" class="lbl">Email:</text>
+<text x="277" y="225.0" class="val">soumyasumankar23@gmail.com</text>
+<text x="205" y="239.0" class="lbl">GitHub:</text>
+<text x="277" y="239.0" class="val">github.com/SOUMYA0023</text>
+<text x="205" y="257.0" class="dash">──────────────────────────────</text>
+<text x="205" y="271.0" class="sec">Highlights:</text>
+<a xlink:href="https://github.com/SOUMYA0023/RepoLens-AI" href="https://github.com/SOUMYA0023/RepoLens-AI">
+<text x="213" y="285.0" class="link">▸ RepoLens AI</text>
+</a>
+<a xlink:href="https://github.com/SOUMYA0023/SmartReach-AI" href="https://github.com/SOUMYA0023/SmartReach-AI">
+<text x="213" y="299.0" class="link">▸ SmartReach-AI</text>
+</a>
+<a xlink:href="https://github.com/SOUMYA0023/PneumoVision" href="https://github.com/SOUMYA0023/PneumoVision">
+<text x="213" y="313.0" class="link">▸ PneumoVision</text>
+</a>
+<text x="247" y="494" class="caption" text-anchor="middle">Auto-updated every 6 h via GitHub Actions</text>
 </svg>

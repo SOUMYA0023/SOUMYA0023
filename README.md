@@ -79,51 +79,35 @@
 
 <div align="center">
 
-### `soumya@github:~$ neofetch`
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<!--   LIVE PROFILE CARDS — auto-generated every 6 h by GitHub Actions     -->
+<!--   Source: scripts/generate_terminal_card.py                           -->
+<!--           scripts/generate_stats_card.py                              -->
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
 
-</div>
-
-```bash
-  ██████  ██████  ██    ██ ███    ███ ██    ██  █████  
- ██      ██    ██ ██    ██ ████  ████  ██  ██  ██   ██ 
-  █████  ██    ██ ██    ██ ██ ████ ██   ████   ███████ 
-      ██ ██    ██ ██    ██ ██  ██  ██    ██    ██   ██ 
- ██████   ██████   ██████  ██      ██    ██    ██   ██ 
- 
- soumya@github                  
- ──────────────────────────────────────────────────────
- OS            SoumyaOS 2.0 — Dark Edition             
- Kernel        AI-Driven · v5.15-stable                
- Shell         zsh + oh-my-zsh                         
- Terminal      iTerm2                                  
- CPU           Curiosity × 8 cores (Always Overclocked)
- GPU           Creativity 3090 — VRAM: Unlimited        
- RAM           ∞ GB Learning (Never Swaps)              
- Disk          Terabytes of Ideas                       
- ──────────────────────────────────────────────────────
- Occupation    Student + Builder + Leader               
- ──────────────────────────────────────────────────────
- Languages     Python · Java · TypeScript · JavaScript  
-               C · SQL · Bash                           
- Frameworks    Next.js · React · Node · Express         
-               FastAPI · Tailwind CSS · Flask           
- AI/ML         TensorFlow · Scikit-learn · LangChain    
-               LangGraph · OpenAI SDK · Hugging Face    
- Databases     MongoDB · PostgreSQL · Supabase · Redis  
- DevOps        Git · Docker · Linux · GitHub Actions    
- Cloud         AWS · Firebase · Vercel · Railway        
- ──────────────────────────────────────────────────────
- Mission       Building AI products that solve          
-               real-world problems.                     
- Status        🟢  Online                               
- Uptime        365 days · No downtime.                  
- Motivation    Keep Shipping.                           
- ──────────────────────────────────────────────────────
-```
-
-<div align="center">
-
-`soumya@github:~$ █`
+<table width="100%">
+  <tr>
+    <td align="center" valign="top" width="50%">
+      <img
+        src="assets/terminal-card.svg"
+        alt="Terminal profile card — neofetch style with live ASCII avatar and system info"
+        width="100%"
+      />
+    </td>
+    <td align="center" valign="top" width="50%">
+      <img
+        src="assets/stats-card.svg"
+        alt="GitHub stats card — live repo count, stars, forks, followers and top languages"
+        width="100%"
+      />
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" align="center">
+      <sub>⚡ Auto-updated every 6 hours via GitHub Actions &nbsp;·&nbsp; <a href="https://github.com/SOUMYA0023/SOUMYA0023/actions/workflows/update-cards.yml">View runs</a></sub>
+    </td>
+  </tr>
+</table>
 
 </div>
 

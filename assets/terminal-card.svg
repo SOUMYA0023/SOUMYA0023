@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="495" height="500"
+     viewBox="0 0 495 500" role="img"
+     aria-label="Terminal profile card — pending first workflow run">
+
+  <!-- Background -->
+  <rect width="495" height="500" fill="#0d0d0d" rx="8"/>
+
+  <!-- Title bar -->
+  <rect width="495" height="30" fill="#1a1a1a" rx="8"/>
+  <rect y="24" width="495" height="6" fill="#1a1a1a"/>
+  <circle cx="16" cy="15" r="5" fill="#ff5f56"/>
+  <circle cx="34" cy="15" r="5" fill="#ffbd2e"/>
+  <circle cx="52" cy="15" r="5" fill="#27c93f"/>
+  <text x="247" y="19" font-family="'Courier New', Courier, monospace"
+        font-size="10" fill="#888888" text-anchor="middle">
+    soumya@github — neofetch
+  </text>
+
+  <!-- Separator -->
+  <line x1="190" y1="30" x2="190" y2="500" stroke="#1f1f1f" stroke-width="1"/>
+
+  <!-- Left: pending placeholder -->
+  <text x="14" y="58" font-family="'Courier New', Courier, monospace"
+        font-size="8" fill="#2ecc40">$ neofetch --user SOUMYA0023</text>
+  <text x="14" y="260" font-family="'Courier New', Courier, monospace"
+        font-size="9" fill="#39FF14" text-anchor="middle" x="97">&#x23F3; Loading…</text>
+
+  <!-- Right: username header -->
+  <text x="205" y="44" font-family="'Courier New', Courier, monospace"
+        font-size="13" font-weight="bold" fill="#39FF14">SOUMYA0023@github</text>
+  <text x="205" y="57" font-family="'Courier New', Courier, monospace"
+        font-size="9" fill="#2ecc40">&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;</text>
+
+  <text x="205" y="85" font-family="'Courier New', Courier, monospace"
+        font-size="9" font-weight="bold" fill="#57d855">Name:</text>
+  <text x="277" y="85" font-family="'Courier New', Courier, monospace"
+        font-size="9" fill="#39FF14">Soumya Kar</text>
+
+  <text x="205" y="99" font-family="'Courier New', Courier, monospace"
+        font-size="9" font-weight="bold" fill="#57d855">Role:</text>
+  <text x="277" y="99" font-family="'Courier New', Courier, monospace"
+        font-size="9" fill="#39FF14">Full-Stack + AI Builder</text>
+
+  <text x="205" y="113" font-family="'Courier New', Courier, monospace"
+        font-size="9" font-weight="bold" fill="#57d855">OS:</text>
+  <text x="277" y="113" font-family="'Courier New', Courier, monospace"
+        font-size="9" fill="#39FF14">CS Undergraduate</text>
+
+  <text x="205" y="127" font-family="'Courier New', Courier, monospace"
+        font-size="9" font-weight="bold" fill="#57d855">Position:</text>
+  <text x="277" y="127" font-family="'Courier New', Courier, monospace"
+        font-size="9" fill="#39FF14">President, Intellects</text>
+  <text x="277" y="141" font-family="'Courier New', Courier, monospace"
+        font-size="9" fill="#39FF14">Technical Club</text>
+
+  <text x="205" y="155" font-family="'Courier New', Courier, monospace"
+        font-size="9" font-weight="bold" fill="#57d855">CGPA:</text>
+  <text x="277" y="155" font-family="'Courier New', Courier, monospace"
+        font-size="9" fill="#39FF14">8.91</text>
+
+  <text x="205" y="185" font-family="'Courier New', Courier, monospace"
+        font-size="9" fill="#2ecc40">&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;</text>
+
+  <!-- Loading notice -->
+  <rect x="197" y="200" width="286" height="60" fill="#111" rx="4"/>
+  <text x="340" y="222" font-family="'Courier New', Courier, monospace"
+        font-size="10" fill="#39FF14" text-anchor="middle">&#x27F3; Generating card…</text>
+  <text x="340" y="238" font-family="'Courier New', Courier, monospace"
+        font-size="8" fill="#2ecc40" text-anchor="middle">Trigger the workflow to populate</text>
+  <text x="340" y="250" font-family="'Courier New', Courier, monospace"
+        font-size="8" fill="#2ecc40" text-anchor="middle">with live data + ASCII avatar.</text>
+
+  <!-- Footer -->
+  <text x="247" y="494" font-family="'Courier New', Courier, monospace"
+        font-size="8" fill="#2ecc40" text-anchor="middle">
+    Auto-updated every 6 h via GitHub Actions
+  </text>
+</svg>

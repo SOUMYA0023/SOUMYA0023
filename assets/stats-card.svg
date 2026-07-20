@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="495" height="500"
+     viewBox="0 0 495 500" role="img"
+     aria-label="GitHub stats card — pending first workflow run">
+
+  <!-- Background -->
+  <rect width="495" height="500" fill="#0d0d0d" rx="8"/>
+
+  <!-- Title bar -->
+  <rect width="495" height="30" fill="#1a1a1a" rx="8"/>
+  <rect y="24" width="495" height="6" fill="#1a1a1a"/>
+  <circle cx="16" cy="15" r="5" fill="#ff5f56"/>
+  <circle cx="34" cy="15" r="5" fill="#ffbd2e"/>
+  <circle cx="52" cy="15" r="5" fill="#27c93f"/>
+  <text x="247" y="19" font-family="'Courier New', Courier, monospace"
+        font-size="10" fill="#888888" text-anchor="middle">
+    soumya@github — stats
+  </text>
+
+  <!-- Section header -->
+  <text x="16" y="62" font-family="'Courier New', Courier, monospace"
+        font-size="12" font-weight="bold" fill="#39FF14">&#x25C8;  GitHub Statistics</text>
+  <line x1="16" y1="70" x2="479" y2="70" stroke="#1f1f1f" stroke-width="1"/>
+
+  <!-- Placeholder stat boxes -->
+  <text x="73"  y="112" font-family="'Courier New', Courier, monospace"
+        font-size="26" font-weight="bold" fill="#39FF14" text-anchor="middle">–</text>
+  <text x="73"  y="132" font-family="'Courier New', Courier, monospace"
+        font-size="9"  fill="#2ecc40" text-anchor="middle">Public Repos</text>
+
+  <text x="191" y="112" font-family="'Courier New', Courier, monospace"
+        font-size="26" font-weight="bold" fill="#39FF14" text-anchor="middle">–</text>
+  <text x="191" y="132" font-family="'Courier New', Courier, monospace"
+        font-size="9"  fill="#2ecc40" text-anchor="middle">Followers</text>
+
+  <text x="309" y="112" font-family="'Courier New', Courier, monospace"
+        font-size="26" font-weight="bold" fill="#39FF14" text-anchor="middle">–</text>
+  <text x="309" y="132" font-family="'Courier New', Courier, monospace"
+        font-size="9"  fill="#2ecc40" text-anchor="middle">Following</text>
+
+  <text x="427" y="112" font-family="'Courier New', Courier, monospace"
+        font-size="26" font-weight="bold" fill="#39FF14" text-anchor="middle">–</text>
+  <text x="427" y="132" font-family="'Courier New', Courier, monospace"
+        font-size="9"  fill="#2ecc40" text-anchor="middle">Total Stars</text>
+
+  <line x1="16" y1="144" x2="479" y2="144" stroke="#1f1f1f" stroke-width="1"/>
+
+  <!-- Loading notice -->
+  <rect x="40" y="175" width="415" height="80" fill="#111" rx="4"/>
+  <text x="247" y="204" font-family="'Courier New', Courier, monospace"
+        font-size="12" fill="#39FF14" text-anchor="middle">&#x27F3; Stats loading…</text>
+  <text x="247" y="222" font-family="'Courier New', Courier, monospace"
+        font-size="9" fill="#2ecc40" text-anchor="middle">
+    Trigger the workflow to fetch live data.
+  </text>
+  <text x="247" y="238" font-family="'Courier New', Courier, monospace"
+        font-size="9" fill="#2ecc40" text-anchor="middle">
+    Language bars, stars, forks &amp; more will appear here.
+  </text>
+
+  <!-- Prompt decoration -->
+  <text x="16" y="450" font-family="'Courier New', Courier, monospace"
+        font-size="9" fill="#2ecc40">SOUMYA0023@github:~$ echo &quot;Keep shipping.&quot;</text>
+  <text x="16" y="464" font-family="'Courier New', Courier, monospace"
+        font-size="9" fill="#39FF14">Keep shipping.</text>
+  <text x="16" y="478" font-family="'Courier New', Courier, monospace"
+        font-size="9" fill="#2ecc40">SOUMYA0023@github:~$ &#x2588;</text>
+
+  <!-- Footer -->
+  <text x="247" y="494" font-family="'Courier New', Courier, monospace"
+        font-size="8" fill="#2ecc40" text-anchor="middle">
+    Auto-updated every 6 hours via GitHub Actions
+  </text>
+</svg>

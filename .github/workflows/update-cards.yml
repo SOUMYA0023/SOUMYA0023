@@ -1,0 +1,83 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# update-cards.yml
+# Regenerates terminal-card.svg and stats-card.svg every 6 hours and on
+# manual trigger, committing only when content actually changed.
+# ─────────────────────────────────────────────────────────────────────────────
+
+name: Update Profile Cards
+
+on:
+  schedule:
+    - cron: '0 */6 * * *'   # 00:00, 06:00, 12:00, 18:00 UTC every day
+  workflow_dispatch:          # allows manual trigger from Actions tab
+
+permissions:
+  contents: write             # needed to push the updated SVG files
+
+jobs:
+  update-cards:
+    name: Regenerate terminal & stats SVG cards
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    env:
+      # ── API Token ─────────────────────────────────────────────────────────
+      # The default GITHUB_TOKEN gives read access to all REST endpoints used
+      # by the generator scripts (public user profile, repos, language bytes).
+      # This is sufficient for everything currently shown in both cards.
+      #
+      # ┌─ UPGRADE PATH ───────────────────────────────────────────────────────
+      # │ To unlock GraphQL data (pinned repos list, contribution graph):
+      # │   1. Create a PAT at https://github.com/settings/tokens
+      # │      → select scope: read:user
+      # │   2. Add it as a secret: Settings → Secrets → Actions → New secret
+      # │      Name:  PROFILE_TOKEN
+      # │   3. Swap this single line below:
+      # │         GITHUB_TOKEN: ${{ secrets.PROFILE_TOKEN }}
+      # └──────────────────────────────────────────────────────────────────────
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    steps:
+      # ── 1. Checkout ─────────────────────────────────────────────────────────
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      # ── 2. Python environment ────────────────────────────────────────────────
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: "pip"
+
+      - name: Install dependencies
+        run: pip install -r scripts/requirements.txt
+
+      # ── 3. Generate cards ────────────────────────────────────────────────────
+      - name: Generate terminal card  (ASCII avatar + system info)
+        run: python scripts/generate_terminal_card.py
+
+      - name: Generate stats card  (live GitHub statistics)
+        run: python scripts/generate_stats_card.py
+
+      # ── 4. Commit only if SVGs changed ───────────────────────────────────────
+      - name: Detect SVG changes
+        id: diff
+        run: |
+          if git diff --quiet assets/; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "::notice::No SVG changes detected — skipping commit."
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+            echo "::notice::SVG changes detected — committing update."
+          fi
+
+      - name: Commit and push updated cards
+        if: steps.diff.outputs.changed == 'true'
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add assets/terminal-card.svg assets/stats-card.svg
+          git commit -m "chore: auto-update profile cards [skip ci]"
+          git push

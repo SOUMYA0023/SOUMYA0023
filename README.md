@@ -89,14 +89,14 @@
   <tr>
     <td align="center" valign="top" width="50%">
       <img
-        src="https://raw.githubusercontent.com/SOUMYA0023/SOUMYA0023/main/assets/terminal-card.svg?v=0"
+        src="https://raw.githubusercontent.com/SOUMYA0023/SOUMYA0023/main/assets/terminal-card.svg?v=2"
         alt="Terminal profile card — neofetch style with live ASCII avatar and system info"
         width="100%"
       />
     </td>
     <td align="center" valign="top" width="50%">
       <img
-        src="https://raw.githubusercontent.com/SOUMYA0023/SOUMYA0023/main/assets/stats-card.svg?v=0"
+        src="https://raw.githubusercontent.com/SOUMYA0023/SOUMYA0023/main/assets/stats-card.svg?v=2"
         alt="GitHub stats card — live repo count, stars, forks, followers and top languages"
         width="100%"
       />

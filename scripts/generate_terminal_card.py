@@ -26,6 +26,7 @@ from __future__ import annotations
 
 import os
 import sys
+import xml.etree.ElementTree as ET
 from io import BytesIO
 
 import requests
@@ -284,31 +285,55 @@ text {{ font-family: {FONT}; }}
     return "\n".join(parts)
 
 
+# ── XML validation ────────────────────────────────────────────────────────────
+
+def validate_svg(svg_content: str) -> None:
+    """
+    Parse the generated SVG as XML and raise ValueError if it is malformed.
+    This catches any SVG-builder bugs before the file is written to disk,
+    preventing a broken image from being committed to the repo.
+    """
+    try:
+        ET.fromstring(svg_content)
+    except ET.ParseError as exc:
+        raise ValueError(f"Generated SVG is not well-formed XML: {exc}") from exc
+
+
 # ── Entry point ───────────────────────────────────────────────────────────────
 
 def main() -> None:
-    s = _session()
+    try:
+        s = _session()
 
-    print(f"[terminal-card] Fetching user data for @{GITHUB_USER} …")
-    user_data   = fetch_user(s)
-    public_repos = user_data.get("public_repos", 0)
-    avatar_url   = user_data.get("avatar_url", "")
-    print(f"  \u2192 public_repos={public_repos}")
+        print(f"[terminal-card] Fetching user data for @{GITHUB_USER} …")
+        user_data    = fetch_user(s)
+        public_repos = user_data.get("public_repos", 0)
+        avatar_url   = user_data.get("avatar_url", "")
+        if not avatar_url:
+            raise RuntimeError("GitHub API returned no avatar_url — check token scopes.")
+        print(f"  → public_repos={public_repos}")
 
-    print(f"[terminal-card] Fetching avatar …")
-    avatar = fetch_avatar(avatar_url)
+        print("[terminal-card] Fetching avatar …")
+        avatar = fetch_avatar(avatar_url)
 
-    print(f"[terminal-card] Converting to ASCII art ({ASCII_COLS}\u00d7{ASCII_ROWS}) …")
-    ascii_lines = image_to_ascii(avatar)
+        print(f"[terminal-card] Converting to ASCII art ({ASCII_COLS}×{ASCII_ROWS}) …")
+        ascii_lines = image_to_ascii(avatar)
 
-    print(f"[terminal-card] Rendering SVG ({CARD_W}\u00d7{CARD_H}) …")
-    svg = build_svg(ascii_lines, public_repos)
+        print(f"[terminal-card] Rendering SVG ({CARD_W}×{CARD_H}) …")
+        svg = build_svg(ascii_lines, public_repos)
 
-    os.makedirs(OUTPUT_DIR, exist_ok=True)
-    out_path = os.path.join(OUTPUT_DIR, "terminal-card.svg")
-    with open(out_path, "w", encoding="utf-8") as fh:
-        fh.write(svg)
-    print(f"[terminal-card] Done \u2192 {out_path}")
+        print("[terminal-card] Validating SVG XML …")
+        validate_svg(svg)   # fails loudly if the builder produced malformed XML
+
+        os.makedirs(OUTPUT_DIR, exist_ok=True)
+        out_path = os.path.join(OUTPUT_DIR, "terminal-card.svg")
+        with open(out_path, "w", encoding="utf-8") as fh:
+            fh.write(svg)
+        print(f"[terminal-card] Done → {out_path}")
+
+    except Exception as exc:  # noqa: BLE001
+        print(f"\n[terminal-card] FATAL: {type(exc).__name__}: {exc}", file=sys.stderr)
+        sys.exit(1)
 
 
 if __name__ == "__main__":

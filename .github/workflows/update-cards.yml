@@ -2,6 +2,10 @@
 # update-cards.yml
 # Regenerates terminal-card.svg and stats-card.svg every 6 hours and on
 # manual trigger, committing only when content actually changed.
+#
+# Cache-busting: after each regeneration the ?v=<run_number> suffix in the
+# README image URLs is bumped so GitHub's camo proxy is forced to fetch fresh
+# content instead of serving its cached copy.
 # ─────────────────────────────────────────────────────────────────────────────
 
 name: Update Profile Cards
@@ -55,29 +59,47 @@ jobs:
         run: pip install -r scripts/requirements.txt
 
       # ── 3. Generate cards ────────────────────────────────────────────────────
+      # Both scripts exit non-zero on any error (network, XML validation, etc.)
+      # so the step fails loudly and the workflow never commits a broken SVG.
       - name: Generate terminal card  (ASCII avatar + system info)
         run: python scripts/generate_terminal_card.py
 
       - name: Generate stats card  (live GitHub statistics)
         run: python scripts/generate_stats_card.py
 
-      # ── 4. Commit only if SVGs changed ───────────────────────────────────────
-      - name: Detect SVG changes
+      # ── 4. Bump cache-buster in README ───────────────────────────────────────
+      # GitHub's camo image proxy caches SVGs against their URL.  Because the
+      # raw.githubusercontent.com paths never change between runs, the proxy
+      # would keep serving stale copies.  We append ?v=<run_number> to both
+      # image URLs and update that value on every run so each regeneration
+      # produces a distinct URL, forcing a fresh fetch from the proxy.
+      - name: Bump ?v= cache-buster in README.md
+        run: |
+          V="${{ github.run_number }}"
+          # Replace ?v=<anything-except-quote> with ?v=<run_number>
+          # Works for both the initial ?v=0 and any previously set value.
+          sed -i -E "s/(\?v=)[^\"]*/\1${V}/g" README.md
+          echo "Cache-buster set to v=${V}"
+          grep -o '?v=[^"]*' README.md   # print new values for the run log
+
+      # ── 5. Commit only if there are changes ──────────────────────────────────
+      - name: Detect changes  (SVGs + README cache-buster)
         id: diff
         run: |
-          if git diff --quiet assets/; then
+          if git diff --quiet assets/ README.md; then
             echo "changed=false" >> "$GITHUB_OUTPUT"
-            echo "::notice::No SVG changes detected — skipping commit."
+            echo "::notice::No changes detected — skipping commit."
           else
             echo "changed=true" >> "$GITHUB_OUTPUT"
-            echo "::notice::SVG changes detected — committing update."
+            echo "::notice::Changes detected — committing update."
           fi
 
-      - name: Commit and push updated cards
+      - name: Commit and push updated cards + README
         if: steps.diff.outputs.changed == 'true'
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add assets/terminal-card.svg assets/stats-card.svg
+          git add assets/terminal-card.svg assets/stats-card.svg README.md
           git commit -m "chore: auto-update profile cards [skip ci]"
           git push
+

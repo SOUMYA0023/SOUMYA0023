@@ -25,6 +25,8 @@ Environment
 from __future__ import annotations
 
 import os
+import sys
+import xml.etree.ElementTree as ET
 from collections import defaultdict
 
 import requests
@@ -371,32 +373,52 @@ text         {{ font-family: {FONT}; }}
 
 # ── Entry point ───────────────────────────────────────────────────────────────
 
+# ── XML validation ────────────────────────────────────────────────────────────
+
+def validate_svg(svg_content: str) -> None:
+    """Raise ValueError if *svg_content* is not well-formed XML."""
+    try:
+        ET.fromstring(svg_content)
+    except ET.ParseError as exc:
+        raise ValueError(f"Generated SVG is not well-formed XML: {exc}") from exc
+
+
+# ── Entry point ───────────────────────────────────────────────────────────────
+
 def main() -> None:
-    s = _session()
+    try:
+        s = _session()
 
-    print(f"[stats-card] Fetching user data for @{GITHUB_USER} …")
-    user = fetch_user(s)
-    print(f"  \u2192 repos={user.get('public_repos')}, "
-          f"followers={user.get('followers')}, "
-          f"following={user.get('following')}")
+        print(f"[stats-card] Fetching user data for @{GITHUB_USER} …")
+        user = fetch_user(s)
+        print(f"  → repos={user.get('public_repos')}, "
+              f"followers={user.get('followers')}, "
+              f"following={user.get('following')}")
 
-    print("[stats-card] Fetching all public repos (paginated) …")
-    repos = fetch_all_repos(s)
-    print(f"  \u2192 {len(repos)} repos found")
+        print("[stats-card] Fetching all public repos (paginated) …")
+        repos = fetch_all_repos(s)
+        print(f"  → {len(repos)} repos found")
 
-    print("[stats-card] Aggregating language bytes …")
-    lang_bytes = fetch_language_bytes(s, repos)
-    print(f"  \u2192 {len(lang_bytes)} languages: "
-          f"{list(lang_bytes.keys())[:6]}")
+        print("[stats-card] Aggregating language bytes …")
+        lang_bytes = fetch_language_bytes(s, repos)
+        print(f"  → {len(lang_bytes)} languages: "
+              f"{list(lang_bytes.keys())[:6]}")
 
-    print("[stats-card] Building SVG …")
-    svg = build_svg(user, repos, lang_bytes)
+        print("[stats-card] Building SVG …")
+        svg = build_svg(user, repos, lang_bytes)
 
-    os.makedirs(OUTPUT_DIR, exist_ok=True)
-    out_path = os.path.join(OUTPUT_DIR, "stats-card.svg")
-    with open(out_path, "w", encoding="utf-8") as fh:
-        fh.write(svg)
-    print(f"[stats-card] Done \u2192 {out_path}")
+        print("[stats-card] Validating SVG XML …")
+        validate_svg(svg)   # fails loudly if builder produced malformed XML
+
+        os.makedirs(OUTPUT_DIR, exist_ok=True)
+        out_path = os.path.join(OUTPUT_DIR, "stats-card.svg")
+        with open(out_path, "w", encoding="utf-8") as fh:
+            fh.write(svg)
+        print(f"[stats-card] Done → {out_path}")
+
+    except Exception as exc:  # noqa: BLE001
+        print(f"\n[stats-card] FATAL: {type(exc).__name__}: {exc}", file=sys.stderr)
+        sys.exit(1)
 
 
 if __name__ == "__main__":

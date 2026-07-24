@@ -12,12 +12,12 @@
   <img src="https://img.shields.io/badge/GitHub-SOUMYA0023-58A6FF?style=for-the-badge&logo=github&logoColor=white&labelColor=0D1117" />
 </a>
 &nbsp;
-<a href="https://linkedin.com/in/soumya-suman-kar">
+<a href="https://www.linkedin.com/in/soumya-kar-ba1241293/">
   <img src="https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white&labelColor=0D1117" />
 </a>
 &nbsp;
-<a href="https://soumya0023.dev">
-  <img src="https://img.shields.io/badge/Portfolio-soumya0023.dev-00F0FF?style=for-the-badge&logo=vercel&logoColor=white&labelColor=0D1117" />
+<a href="https://portfolio-promax.netlify.app">
+  <img src="https://img.shields.io/badge/Portfolio-portfolio--promax.netlify.app-00F0FF?style=for-the-badge&logo=netlify&logoColor=white&labelColor=0D1117" />
 </a>
 &nbsp;
 <a href="mailto:soumyasumankar23@gmail.com">
